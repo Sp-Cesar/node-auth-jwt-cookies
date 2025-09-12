@@ -1,3 +1,5 @@
+require('dotenv').config();
+const { Console } = require('console');
 //Importamos express
 const express = require('express');
 const path = require('path');
@@ -16,6 +18,9 @@ app.set('view engine', 'ejs')
 //Usar las Rutas
 app.use('/', require('./routes'));
 
-app.listen(3000, () => {
-    console.log('Servidor se esta ejecuntando en http://localhost:3000/login');
-})
+
+const PORT = process.env.PORT
+app.listen(PORT, () => {
+  console.log(`El servidor se está ejecutando en http://localhost:${PORT}/login`);
+});
+
