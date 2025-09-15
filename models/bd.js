@@ -14,7 +14,6 @@ conexion.connect((error)=>{
         return;
     }else{
         console.log('Se conecto a la base de datos correctamente!!!')
-        console.log(process.env.DB_HOST)
     }
 });
 

@@ -1,13 +1,17 @@
-require('dotenv').config();
-const { Console } = require('console');
+
 //Importamos express
 const express = require('express');
 const path = require('path');
 const app = express();
+const cookieParser = require('cookie-parser');
+
 
 //Capturar datos del For
 app.use(express.urlencoded({extended:false}));
 app.use(express.json());
+
+//MIDDELWARE
+app.use(cookieParser()); // 👈 habilitar cookies
 
 //Middleware para archivos estáticos (CSS, imágenes, JS)
 app.use(express.static(path.join(__dirname, 'public')));
